@@ -3,6 +3,7 @@
      \date 12/11/2020
      \copyright This code is covered by the GNU general public license v3.0
 */
+//comment
 #include "Semaphore.h"
 #include <iostream>
 #include <thread>
