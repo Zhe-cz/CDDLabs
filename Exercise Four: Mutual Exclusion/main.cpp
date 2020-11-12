@@ -1,3 +1,8 @@
+/*! \mainpage Lab 2 Semaphores
+     \author Zhe Cui
+     \date 12/11/2020
+     \copyright This code is covered by the GNU general public license v3.0
+*/
 #include "Semaphore.h"
 #include <iostream>
 #include <thread>
@@ -8,27 +13,27 @@ static const int num_threads = 100;
 int sharedVariable=0;
 
 
-/*! \fn updateTask
-    \brief An Implementation of Mutual Exclusion using Semaphores
 
-   Uses C++11 features such as mutex and condition variables to implement an example of a rendezvous for threads
+/*! \fn void updateTask(std::shared_ptr<Semaphore> firstSem, int numUpdates)
+    \brief This function will loop the i++ until i=numUpdates
+    \param firstSem the firstSem used for mutual exclusion of the sharded variable
 
+    This function will displays a message that is split in to 2 sections to show how a rendezvous works
 */
-/*! displays a message that is split in to 2 sections to show how a rendezvous works*/
 void updateTask(std::shared_ptr<Semaphore> firstSem, int numUpdates){
 
- 
   for(int i=0;i<numUpdates;i++){
     //UPDATE SHARED VARIABLE HERE!
+    firstSem->Wait();
     sharedVariable++;
+    firstSem->Signal();
   }
-
-}
+} 
 
 
 int main(void){
   std::vector<std::thread> vt(num_threads);
-  std::shared_ptr<Semaphore> aSemaphore( new Semaphore);
+  std::shared_ptr<Semaphore> aSemaphore( new Semaphore(1));
   /**< Launch the threads  */
   int i=0;
   for(std::thread& t: vt){

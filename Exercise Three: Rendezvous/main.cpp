@@ -1,3 +1,8 @@
+/*! \mainpage Lab 3 Rendezvous
+     \author Zhe Cui
+     \date 12/11/2020
+     \copyright This code is covered by the GNU general public license v3.0
+*/
 #include "Semaphore.h"
 #include <iostream>
 #include <thread>
@@ -9,7 +14,15 @@
    Uses C++11 features such as mutex and condition variables to implement an example of a rendezvous for threads
 
 */
-/*! displays a message that is split in to 2 sections to show how a rendezvous works*/
+
+
+/*! \fn taskOne(std::shared_ptr<Semaphore> firstSem,std::shared_ptr<Semaphore>  secondSem, int delay)
+    \brief "This function will print "Task One has arrived!" "Task One has left!"
+    \param firstSem the firstSem used for flow control
+    \param secondSem the secondSem used for flow control
+
+    This function will displays a message that is split in to 2 sections to show how a rendezvous works
+*/ 
 void taskOne(std::shared_ptr<Semaphore> firstSem,std::shared_ptr<Semaphore>  secondSem, int delay){
   std::this_thread::sleep_for(std::chrono::seconds(delay));
   
@@ -20,7 +33,14 @@ void taskOne(std::shared_ptr<Semaphore> firstSem,std::shared_ptr<Semaphore>  sec
   std::cout << "Task One has left!"<<std::endl;
   
 }
-/*! displays a message that is split in to 2 sections to show how a rendezvous works*/
+
+/*! \fn taskTwo(std::shared_ptr<Semaphore> firstSem, std::shared_ptr<Semaphore> secondSem, int delay)
+    \brief "This function will print "Task Two has arrived!" "Task Two has left!"
+    \param firstSem the firstSem used for flow control
+    \param secondSem the secondSem used for flow control
+    
+    This function will displays a message that is split in to 2 sections to show how a rendezvous works
+*/ 
 void taskTwo(std::shared_ptr<Semaphore> firstSem, std::shared_ptr<Semaphore> secondSem, int delay){
   std::this_thread::sleep_for(std::chrono::seconds(delay));
   
