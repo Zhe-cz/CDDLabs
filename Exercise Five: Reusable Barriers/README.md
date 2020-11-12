@@ -1,5 +1,3 @@
-
-
 # Project Licence 
 GNU general public license v3.0
 # Authors of Project 
