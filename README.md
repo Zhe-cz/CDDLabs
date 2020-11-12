@@ -1,5 +1,5 @@
 # License
-GNU V3
+GNU general public license v3.0
 # Author:
 Zhe and Joe
 # Install:
