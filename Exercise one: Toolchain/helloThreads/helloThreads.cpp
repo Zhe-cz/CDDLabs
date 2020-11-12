@@ -1,4 +1,9 @@
-/*! \file hellothreads.cpp
+/*! \mainpage Lab 1 Toolchain
+     \author Zhe Cui
+     \date 12/11/2020
+     \copyright This code is covered by the GNU general public license v3.0
+*/
+/*! \file helloThreads.cpp
     \brief A Documented file.
     
     You should document all your files using doxygen.  

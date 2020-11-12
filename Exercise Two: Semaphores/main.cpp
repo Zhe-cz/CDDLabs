@@ -1,3 +1,8 @@
+/*! \mainpage Lab 2 Semaphores
+     \author Zhe Cui
+     \date 12/11/2020
+     \copyright This code is covered by the GNU general public license v3.0
+*/
 #include "Semaphore.h"
 #include <iostream>
 #include <thread>
@@ -8,16 +13,31 @@
    Uses C++11 features such as mutex and condition variables to implement Semaphores in thread functions 
 
 */
-/*! displays a message first*/
+/*! \fn void taskOne(std::shared_ptr<Semaphore> theSemaphore, int delay)
+    \brief This function will print "I must print first to the screen" with a delay
+    \param delay the delay in seconds enforced on the function
+    \param theSemaphore the semaphore used for flow control
+    This function will sleep for the delay in seconds before printing out "I must print first" to the screen
+    We will use the semaphore to control the flow of control between the function 
+    and taskTwo to get the correct order of print outs
+*/
+
 void taskOne(std::shared_ptr<Semaphore> theSemaphore, int delay){
   sleep(delay);
   std::cout <<"I ";
   std::cout << "must ";
   std::cout << "print ";
   std::cout << "first"<<std::endl;
+  theSemaphore->Signal();
 }
-/*! displays a message second*/
+/*! \fn void taskTwo(std::shared_ptr<Semaphore> theSemaphore)
+    \brief "This function will print "This will appear second"
+    \param theSemaphore the semaphore used for flow control
+    
+    This function will printing out "This will appear second" after the theSemaphore is signaled
+*/ 
 void taskTwo(std::shared_ptr<Semaphore> theSemaphore){
+  theSemaphore->Wait();
   std::cout <<"This ";
   std::cout << "will ";
   std::cout << "appear ";
