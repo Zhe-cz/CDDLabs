@@ -1,7 +1,10 @@
-/*! \mainpage Lab 2 Semaphores
+/*! \mainpage Lab 4 Mutual Exclision
      \author Zhe Cui
-     \date 12/11/2020
+     \date 14/11/2020
      \copyright This code is covered by the GNU general public license v3.0
+*/
+/*! \file main.cpp
+    \brief An Implementation of a Mutual Exclusion using Semaphores
 */
 #include "Semaphore.h"
 #include <iostream>

@@ -1,3 +1,8 @@
+/*! \mainpage Lab 4 Mutual Exclision
+     \author Zhe Cui
+     \date 14/11/2020
+     \copyright This code is covered by the GNU general public license v3.0
+*/
 #include "Semaphore.h"
 /*! \class Semaphore
     \brief A Semaphore Implementation

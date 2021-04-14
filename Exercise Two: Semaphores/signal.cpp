@@ -2,13 +2,7 @@
 #include <iostream>
 #include <thread>
 #include <unistd.h>
-/*! \class Signal
-    \brief An Implementation of Threads Using Semaphores 
 
-   Uses C++11 features such as mutex and condition variables to implement Semaphores in thread functions 
-
-*/
-/*! displays a message first*/
 void taskOne(std::shared_ptr<Semaphore> theSemaphore, int delay){
   sleep(delay);
   std::cout <<"I ";

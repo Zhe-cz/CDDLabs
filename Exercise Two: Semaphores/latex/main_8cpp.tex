@@ -1,0 +1,81 @@
+\hypertarget{main_8cpp}{}\doxysection{main.\+cpp File Reference}
+\label{main_8cpp}\index{main.cpp@{main.cpp}}
+
+
+An Implementation of Threads Using Semaphores.  
+
+
+{\ttfamily \#include \char`\"{}Semaphore.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8cpp_a2b4729d561c345111ccab970fe11e229}{task\+One}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_semaphore}{Semaphore}} $>$ the\+Semaphore, int delay)
+\begin{DoxyCompactList}\small\item\em This function will print \char`\"{}\+I must print first to the screen\char`\"{} with a delay. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_ae4ea9570be601d182fa473c7ca431852}{task\+Two}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_semaphore}{Semaphore}} $>$ the\+Semaphore)
+\begin{DoxyCompactList}\small\item\em \char`\"{}\+This function will print \char`\"{}This will appear second" \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An Implementation of Threads Using Semaphores. 
+
+Uses C++11 features such as mutex and condition variables to implement Semaphores in thread functions 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8cpp_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+$<$ Launch the threads ~\newline
+
+
+$<$ Wait for the threads to finish
+
+Definition at line 49 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a2b4729d561c345111ccab970fe11e229}\label{main_8cpp_a2b4729d561c345111ccab970fe11e229}} 
+\index{main.cpp@{main.cpp}!taskOne@{taskOne}}
+\index{taskOne@{taskOne}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{taskOne()}{taskOne()}}
+{\footnotesize\ttfamily void task\+One (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_semaphore}{Semaphore}} $>$}]{the\+Semaphore,  }\item[{int}]{delay }\end{DoxyParamCaption})}
+
+
+
+This function will print \char`\"{}\+I must print first to the screen\char`\"{} with a delay. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delay} & the delay in seconds enforced on the function \\
+\hline
+{\em the\+Semaphore} & the semaphore used for flow control\\
+\hline
+\end{DoxyParams}
+This function will sleep for the delay in seconds before printing out \char`\"{}\+I must print first\char`\"{} to the screen We will use the semaphore to control the flow of control between the function and task\+Two to get the correct order of print outs 
+
+Definition at line 26 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_ae4ea9570be601d182fa473c7ca431852}\label{main_8cpp_ae4ea9570be601d182fa473c7ca431852}} 
+\index{main.cpp@{main.cpp}!taskTwo@{taskTwo}}
+\index{taskTwo@{taskTwo}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{taskTwo()}{taskTwo()}}
+{\footnotesize\ttfamily void task\+Two (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_semaphore}{Semaphore}} $>$}]{the\+Semaphore }\end{DoxyParamCaption})}
+
+
+
+\char`\"{}\+This function will print \char`\"{}This will appear second" 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\+Semaphore} & the semaphore used for flow control\\
+\hline
+\end{DoxyParams}
+This function will printing out \char`\"{}\+This will appear second\char`\"{} after the the\+Semaphore is signaled 
+
+Definition at line 40 of file main.\+cpp.
+

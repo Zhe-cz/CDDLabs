@@ -10,7 +10,6 @@ var NAVTREEINDEX0 =
 "class_semaphore.html#a72aabebf026e3a8b1f3e4d0fa8ee1eda":[2,0,0,2],
 "class_semaphore.html#a7f700173ae86ae623684109066e07656":[2,0,0,3],
 "class_semaphore.html#a86f92f738b4486439b296d8e235895f2":[2,0,0,1],
-"class_signal.html":[2,0,1],
 "classes.html":[2,1],
 "files.html":[3,0],
 "functions.html":[2,2,0],

@@ -12,10 +12,11 @@ g++ \
 make
 # TODO:
 # Files:
-* helloThreads.cpp 
-* Makefile 
-* Makefile1 
-* Makefile2 
-* Makefile3 
+* Lab1 Toolchain
+* Lab2 Semaphores 
+* Lab3 Rendezvous
+* Lab4 Mutual Exclusion
+* Lab5 Reusable Class
+* Lab6 Producers and Consumers
 # Info:
 Introduction to Doxygen, g++, makefile and git.

@@ -7,14 +7,13 @@
 
 CC=g++
 CFLAGS= -std=c++11 -pthread
-OBJFILES = main.o Semaphore.o 
 
 #This rule says that each .o file depends on a .cpp file of the same name
 %.o: %.cpp
-	$(CC) -c -o $@ $< $(CFLAGS)
+	$(CC) -c -o $@ $< $(CFLAGS) $(DEBUGFLAGS)
 
-ALL: $(OBJFILES) 
-	$(CC) -o Amy $(OBJFILES) $(CFLAGS) $(DEBUGFLAGS)
+ALL: main.o
+	$(CC) -o main main.cpp Barrier.cpp Semaphore.cpp $(CFLAGS) $(DEBUGFLAGS)
 
 DEBUG: DEBUGFLAGS = -DDEBUG -Wall
 DEBUG: ALL
@@ -22,3 +21,4 @@ DEBUG: ALL
 #this is customary and just deletes all .o files
 CLEAN:
 	rm *.o
+

@@ -1,20 +1,17 @@
 /*! \mainpage Lab 3 Rendezvous
      \author Zhe Cui
-     \date 12/11/2020
+     \date 13/11/2020
      \copyright This code is covered by the GNU general public license v3.0
 */
+/*! \file main.cpp
+    \brief An Implementation of a Rendezvous using Semaphores
+*/
+
+
 #include "Semaphore.h"
 #include <iostream>
 #include <thread>
 #include <chrono>
-
-/*! \class Signal
-    \brief An Implementation of a Rendezvous using Semaphores
-
-   Uses C++11 features such as mutex and condition variables to implement an example of a rendezvous for threads
-
-*/
-
 
 /*! \fn taskOne(std::shared_ptr<Semaphore> firstSem,std::shared_ptr<Semaphore>  secondSem, int delay)
     \brief "This function will print "Task One has arrived!" "Task One has left!"
@@ -49,7 +46,6 @@ void taskTwo(std::shared_ptr<Semaphore> firstSem, std::shared_ptr<Semaphore> sec
   secondSem->Wait();
   //THIS IS THE RENDEZVOUS POINT!
   std::cout << "Task Two has left "<<std::endl;
-  //Semaphore
 }
 
 int main(void){

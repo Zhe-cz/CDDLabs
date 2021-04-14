@@ -1,3 +1,8 @@
+/*! \mainpage Lab 5 Barriers
+    \author Zhe Cui
+    \date 20.11.2020
+    \version GNU AFFERO GENERAL PUBLIC LICENSE Version 3, 19 November 2007
+*/
 #include "Semaphore.h"
 /*! \class Semaphore
     \brief A Semaphore Implementation

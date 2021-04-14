@@ -1,3 +1,9 @@
+/*! \mainpage Lab 5 Barriers
+    \author Zhe Cui
+    \date 20.11.2020
+    \version GNU AFFERO GENERAL PUBLIC LICENSE Version 3, 19 November 2007
+*/
+
 /* Barrier.h --- Barrier.h
  * 
  * Filename: Barrier.h
@@ -43,13 +49,34 @@
  */
 
 /* Code: */
+
+/*!
+    \file Barrier.h
+    \brief Implementation of reusable barrier
+  
+    \param int numThreads - The number of threads that the barrier will work with
+    \param Semaphore first{0} - The first semaphore initialized to 0, used as a turnstile in concurrence with the second one below.
+    \param Semaphore second{1} - The second semaphore, initialized to 1 and used as a turnstile in concurrence with the first one.
+    \param Semaphore mutexSem{1} - The semaphore inizialized to 1 and used as a mutex lock.It allows the first thread to pass through and no wait,
+    but all the others will  wait until the thread in the critical section finish its work and signals the next one.
+    \param int barrierCount = 0 - Counter variable used to keep track of the last thread through each phase
+   
+*/
 #pragma once
-class Barrier{
+#include "Semaphore.h"
+class Barrier
+{
   int numThreads;
+  Semaphore mutex{1};
+  Semaphore firstTurnStile{0};
+  Semaphore secondTurnStile{1};
+  int count = 0;
  public:
-  Barrier(int numThreads);
+  Barrier(int totalThreads):numThreads(totalThreads){};
   virtual ~Barrier();
-  void wait();  
+  void wait(); 
+  void phaseOne();
+  void phaseTwo(); 
 };
 
 

@@ -43,6 +43,15 @@
  */
 
 /* Code: */
+#pragma once
+class Event
+{
+    private:
+        char nChar;
+    public:
+        Event();
+        void consume();
+};
 
 
 
