@@ -3,17 +3,16 @@
      \date 12/11/2020
      \copyright This code is covered by the GNU general public license v3.0
 */
-//comment
-#include "Semaphore.h"
-#include <iostream>
-#include <thread>
-#include <unistd.h>
-/*! \class Signal
+/*! \file main.cpp
     \brief An Implementation of Threads Using Semaphores 
 
    Uses C++11 features such as mutex and condition variables to implement Semaphores in thread functions 
 
 */
+#include "Semaphore.h"
+#include <iostream>
+#include <thread>
+#include <unistd.h>
 /*! \fn void taskOne(std::shared_ptr<Semaphore> theSemaphore, int delay)
     \brief This function will print "I must print first to the screen" with a delay
     \param delay the delay in seconds enforced on the function

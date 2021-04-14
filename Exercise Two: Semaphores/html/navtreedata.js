@@ -22,8 +22,16 @@ for the JavaScript code in this file
 */
 var NAVTREE =
 [
-  [ "labTwo", "index.html", [
+  [ "Lab2 Semaphores", "index.html", [
     [ "Lab 2 Semaphores", "index.html", null ],
+    [ "License", "md__r_e_a_d_m_e.html", [
+      [ "Author:", "md__r_e_a_d_m_e.html#autotoc_md1", null ],
+      [ "Install:", "md__r_e_a_d_m_e.html#autotoc_md2", null ],
+      [ "Dependencies:", "md__r_e_a_d_m_e.html#autotoc_md3", null ],
+      [ "TODO:", "md__r_e_a_d_m_e.html#autotoc_md4", null ],
+      [ "Files:", "md__r_e_a_d_m_e.html#autotoc_md5", null ],
+      [ "Info:", "md__r_e_a_d_m_e.html#autotoc_md6", null ]
+    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
